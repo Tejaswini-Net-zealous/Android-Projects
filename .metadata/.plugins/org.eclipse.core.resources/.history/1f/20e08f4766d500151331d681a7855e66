@@ -1,0 +1,351 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# List of comma-separated packages that start with or equal this string
+# will cause a security exception to be thrown when
+# passed to checkPackageAccess unless the
+# corresponding RuntimePermission ("accessClassInPackage."+package) has
+# been granted.
+package.access=sun.,org.apache.catalina.,org.apache.coyote.,org.apache.tomcat.,org.apache.jasper.
+#
+# List of comma-separated packages that start with or equal this string
+# will cause a security exception to be thrown when
+# passed to checkPackageDefinition unless the
+# corresponding RuntimePermission ("defineClassInPackage."+package) has
+# been granted.
+#
+# by default, no packages are restricted for definition, and none of
+# the class loaders supplied with the JDK call checkPackageDefinition.
+#
+package.definition=sun.,java.,org.apache.catalina.,org.apache.coyote.,org.apache.tomcat.,org.apache.jasper.
+
+#
+#
+# List of comma-separated paths defining the contents of the "common"
+# classloader. Prefixes should be used to define what is the repository type.
+# Path may be relative to the CATALINA_HOME or CATALINA_BASE path or absolute.
+# If left as blank,the JVM system loader will be used as Catalina's "common"
+# loader.
+# Examples:
+#     "foo": Add this folder as a class repository
+#     "foo/*.jar": Add all the JARs of the specified folder as class
+#                  repositories
+#     "foo/bar.jar": Add bar.jar as a class repository
+common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
+
+#
+# List of comma-separated paths defining the contents of the "server"
+# classloader. Prefixes should be used to define what is the repository type.
+# Path may be relative to the CATALINA_HOME or CATALINA_BASE path or absolute.
+# If left as blank, the "common" loader will be used as Catalina's "server"
+# loader.
+# Examples:
+#     "foo": Add this folder as a class repository
+#     "foo/*.jar": Add all the JARs of the specified folder as class
+#                  repositories
+#     "foo/bar.jar": Add bar.jar as a class repository
+server.loader=
+
+#
+# List of comma-separated paths defining the contents of the "shared"
+# classloader. Prefixes should be used to define what is the repository type.
+# Path may be relative to the CATALINA_BASE path or absolute. If left as blank,
+# the "common" loader will be used as Catalina's "shared" loader.
+# Examples:
+#     "foo": Add this folder as a class repository
+#     "foo/*.jar": Add all the JARs of the specified folder as class
+#                  repositories
+#     "foo/bar.jar": Add bar.jar as a class repository
+# Please note that for single jars, e.g. bar.jar, you need the URL form
+# starting with file:.
+ofbiz.home=D:/portal/gcp
+shared.loader=file:////${ofbiz.home}/ofbiz.jar,\
+D:/portal/gcp,\
+D:/portal/gcp/framework/base/dtd,\
+D:/portal/gcp/framework/base/config,\
+D:/portal/gcp/framework/entity/dtd,\
+D:/portal/gcp/framework/entity/config,\
+D:/portal/gcp/framework/catalina/config,\
+D:/portal/gcp/framework/security/config,\
+D:/portal/gcp/framework/security/dtd,\
+D:/portal/gcp/framework/datafile/dtd,\
+D:/portal/gcp/framework/minilang/config,\
+D:/portal/gcp/framework/minilang/dtd,\
+D:/portal/gcp/framework/common/config,\
+D:/portal/gcp/framework/common/script,\
+D:/portal/gcp/framework/service/config,\
+D:/portal/gcp/framework/service/dtd,\
+D:/portal/gcp/framework/entityext/script,\
+D:/portal/gcp/framework/bi/script,\
+D:/portal/gcp/framework/bi/config,\
+D:/portal/gcp/framework/webapp/config,\
+D:/portal/gcp/framework/webapp/dtd,\
+D:/portal/gcp/framework/guiapp/config,\
+D:/portal/gcp/framework/widget/config,\
+D:/portal/gcp/framework/widget/dtd,\
+D:/portal/gcp/framework/appserver/config,\
+D:/portal/gcp/framework/testtools/dtd,\
+D:/portal/gcp/framework/webtools/config,\
+D:/portal/gcp/framework/webslinger/config,\
+D:/portal/gcp/applications/party/config,\
+D:/portal/gcp/applications/party/script,\
+D:/portal/gcp/applications/securityext/config,\
+D:/portal/gcp/applications/securityext/script,\
+D:/portal/gcp/applications/content/config,\
+D:/portal/gcp/applications/content/script,\
+D:/portal/gcp/applications/content/dtd,\
+D:/portal/gcp/applications/workeffort/config,\
+D:/portal/gcp/applications/workeffort/script,\
+D:/portal/gcp/applications/product/config,\
+D:/portal/gcp/applications/product/script,\
+D:/portal/gcp/applications/manufacturing/config,\
+D:/portal/gcp/applications/manufacturing/script,\
+D:/portal/gcp/applications/accounting/script,\
+D:/portal/gcp/applications/accounting/config,\
+D:/portal/gcp/applications/humanres/script,\
+D:/portal/gcp/applications/humanres/config,\
+D:/portal/gcp/applications/order/config,\
+D:/portal/gcp/applications/order/script,\
+D:/portal/gcp/applications/order/email,\
+D:/portal/gcp/applications/marketing/script,\
+D:/portal/gcp/applications/marketing/config,\
+D:/portal/gcp/specialpurpose/ecommerce/config,\
+D:/portal/gcp/specialpurpose/ecommerce/script,\
+D:/portal/gcp/specialpurpose/hhfacility/script,\
+D:/portal/gcp/hot-deploy/admin/config,\
+D:/portal/gcp/hot-deploy/Affiliation/config,\
+D:/portal/gcp/hot-deploy/Affiliation/dtd,\
+D:/portal/gcp/hot-deploy/finance/config,\
+file:////D:/portal/gcp/ofbiz.jar,\
+file:////D:/portal/gcp/framework/base/lib/ant/ant-apache-bsf-1.7.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/ant/ant-nodeps-1.7.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/ant-1.7.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/ant-junit-1.7.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/ant-launcher-1.7.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/antisamy-bin.1.2.jar,\
+file:////D:/portal/gcp/framework/base/lib/avalon-framework-4.2.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/avalon-util-exception-1.0.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/backport-util-concurrent-Java50-3.1.jar,\
+file:////D:/portal/gcp/framework/base/lib/barcode4j-fop-ext-complete-2.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/batik-all-1.7.jar,\
+file:////D:/portal/gcp/framework/base/lib/commons/commons-beanutils-1.7.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/commons/commons-cli-1.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/commons/commons-codec-1.3.jar,\
+file:////D:/portal/gcp/framework/base/lib/commons/commons-collections-3.2.1.jar,\
+file:////D:/portal/gcp/framework/base/lib/commons/commons-collections-3.2.jar,\
+file:////D:/portal/gcp/framework/base/lib/commons/commons-digester-1.8.jar,\
+file:////D:/portal/gcp/framework/base/lib/commons/commons-discovery-0.4.jar,\
+file:////D:/portal/gcp/framework/base/lib/commons/commons-el-1.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/commons/commons-fileupload-1.2.jar,\
+file:////D:/portal/gcp/framework/base/lib/commons/commons-io-1.3.1.jar,\
+file:////D:/portal/gcp/framework/base/lib/commons/commons-lang-2.3.jar,\
+file:////D:/portal/gcp/framework/base/lib/commons/commons-logging-1.1.jar,\
+file:////D:/portal/gcp/framework/base/lib/commons/commons-modeler-2.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/commons/commons-net-1.4.1.jar,\
+file:////D:/portal/gcp/framework/base/lib/commons/commons-pool-1.3.jar,\
+file:////D:/portal/gcp/framework/base/lib/commons/commons-primitives-1.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/commons/commons-validator-1.3.1.jar,\
+file:////D:/portal/gcp/framework/base/lib/commons/commons-vfs-20070730.jar,\
+file:////D:/portal/gcp/framework/base/lib/fop-0.94.jar,\
+file:////D:/portal/gcp/framework/base/lib/freemarker-2.3.15.jar,\
+file:////D:/portal/gcp/framework/base/lib/httpunit.jar,\
+file:////D:/portal/gcp/framework/base/lib/ical4j-1.0-beta5.jar,\
+file:////D:/portal/gcp/framework/base/lib/icu4j-3_6.jar,\
+file:////D:/portal/gcp/framework/base/lib/j2eespecs/geronimo-activation_1.0.2_spec-1.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/j2eespecs/geronimo-j2ee-connector_1.5_spec-1.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/j2eespecs/geronimo-jaxrpc_1.1_spec-1.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/j2eespecs/geronimo-jaxr_1.0_spec-1.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/j2eespecs/geronimo-jms_1.1_spec-1.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/j2eespecs/geronimo-jta_1.1_spec-1.1.1.jar,\
+file:////D:/portal/gcp/framework/base/lib/j2eespecs/geronimo-qname_1.1_spec-1.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/j2eespecs/tomcat-6.0.16-annotations_spec.jar,\
+file:////D:/portal/gcp/framework/base/lib/j2eespecs/tomcat-6.0.16-el_2.1_spec.jar,\
+file:////D:/portal/gcp/framework/base/lib/j2eespecs/tomcat-6.0.16-jsp_2.1_spec.jar,\
+file:////D:/portal/gcp/framework/base/lib/j2eespecs/tomcat-6.0.16-servlet_2.5_spec.jar,\
+file:////D:/portal/gcp/framework/base/lib/jakarta-regexp-1.5.jar,\
+file:////D:/portal/gcp/framework/base/lib/javacc/javacc.jar,\
+file:////D:/portal/gcp/framework/base/lib/javolution-5.2.3.jar,\
+file:////D:/portal/gcp/framework/base/lib/jaxb-api-2.1.jar,\
+file:////D:/portal/gcp/framework/base/lib/jaxb-api.jar,\
+file:////D:/portal/gcp/framework/base/lib/jaxb-impl-2.1.12.jar,\
+file:////D:/portal/gcp/framework/base/lib/jaxb-impl.jar,\
+file:////D:/portal/gcp/framework/base/lib/jaxb-xjc-2.1.12.jar,\
+file:////D:/portal/gcp/framework/base/lib/jaxb-xjc.jar,\
+file:////D:/portal/gcp/framework/base/lib/jaxws-api.jar,\
+file:////D:/portal/gcp/framework/base/lib/jaxws-rt.jar,\
+file:////D:/portal/gcp/framework/base/lib/jaxws-tools.jar,\
+file:////D:/portal/gcp/framework/base/lib/jdbm-1.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/jdom-1.1.jar,\
+file:////D:/portal/gcp/framework/base/lib/jpim-0.1.jar,\
+file:////D:/portal/gcp/framework/base/lib/jsr173_api.jar,\
+file:////D:/portal/gcp/framework/base/lib/jsr181-api.jar,\
+file:////D:/portal/gcp/framework/base/lib/juel-2.1.1.jar,\
+file:////D:/portal/gcp/framework/base/lib/junit.jar,\
+file:////D:/portal/gcp/framework/base/lib/junitperf.jar,\
+file:////D:/portal/gcp/framework/base/lib/jxl.jar,\
+file:////D:/portal/gcp/framework/base/lib/log4j-1.2.15.jar,\
+file:////D:/portal/gcp/framework/base/lib/lsimplecaptcha-20080507.jar,\
+file:////D:/portal/gcp/framework/base/lib/mail.jar,\
+file:////D:/portal/gcp/framework/base/lib/mx4j-3.0.1.jar,\
+file:////D:/portal/gcp/framework/base/lib/mx4j-remote-3.0.1.jar,\
+file:////D:/portal/gcp/framework/base/lib/nekohtml.jar,\
+file:////D:/portal/gcp/framework/base/lib/owasp-esapi-full-java-1.4.jar,\
+file:////D:/portal/gcp/framework/base/lib/resolver-2.8.1.jar,\
+file:////D:/portal/gcp/framework/base/lib/saaj-api-1.3.jar,\
+file:////D:/portal/gcp/framework/base/lib/saaj-api.jar,\
+file:////D:/portal/gcp/framework/base/lib/saaj-impl-1.3.2.jar,\
+file:////D:/portal/gcp/framework/base/lib/saaj-impl.jar,\
+file:////D:/portal/gcp/framework/base/lib/scripting/antlr-2.7.6.jar,\
+file:////D:/portal/gcp/framework/base/lib/scripting/asm-2.2.jar,\
+file:////D:/portal/gcp/framework/base/lib/scripting/asm-analysis-2.2.jar,\
+file:////D:/portal/gcp/framework/base/lib/scripting/asm-tree-2.2.jar,\
+file:////D:/portal/gcp/framework/base/lib/scripting/asm-util-2.2.jar,\
+file:////D:/portal/gcp/framework/base/lib/scripting/bsf-2.4.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/scripting/bsh-2.0b4.jar,\
+file:////D:/portal/gcp/framework/base/lib/scripting/groovy-1.5.6.jar,\
+file:////D:/portal/gcp/framework/base/lib/scripting/jakarta-oro-2.0.8.jar,\
+file:////D:/portal/gcp/framework/base/lib/scripting/janino-2.5.15.jar,\
+file:////D:/portal/gcp/framework/base/lib/scripting/jython-nooro.jar,\
+file:////D:/portal/gcp/framework/base/lib/stax-1.2.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/stax-api-1.0.jar,\
+file:////D:/portal/gcp/framework/base/lib/stax-ex.jar,\
+file:////D:/portal/gcp/framework/base/lib/streambuffer.jar,\
+file:////D:/portal/gcp/framework/base/lib/Tidy.jar,\
+file:////D:/portal/gcp/framework/base/lib/USAePayAPI-jaxws-1.2.jar,\
+file:////D:/portal/gcp/framework/base/lib/xercesImpl-2.8.1.jar,\
+file:////D:/portal/gcp/framework/base/lib/xml-apis-2.8.1.jar,\
+file:////D:/portal/gcp/framework/base/lib/xml-apis-ext-1.3.04.jar,\
+file:////D:/portal/gcp/framework/base/lib/xmlgraphics-commons-1.3.1.jar,\
+file:////D:/portal/gcp/framework/base/build/lib/ofbiz-base.jar,\
+file:////D:/portal/gcp/framework/geronimo/lib/geronimo-connector-2.1.1.jar,\
+file:////D:/portal/gcp/framework/geronimo/lib/geronimo-transaction-2.1.1.jar,\
+file:////D:/portal/gcp/framework/geronimo/build/lib/ofbiz-geronimo.jar,\
+file:////D:/portal/gcp/framework/entity/lib/commons-dbcp-1.3-20091113-r835956.jar,\
+file:////D:/portal/gcp/framework/entity/lib/ofbiz-minerva.jar,\
+file:////D:/portal/gcp/framework/entity/lib/jdbc/derby-10.4.1.3.jar,\
+file:////D:/portal/gcp/framework/entity/lib/jdbc/derbytools-10.4.1.3.jar,\
+file:////D:/portal/gcp/framework/entity/lib/jdbc/mysql-connector-java-5.1.6-bin.jar,\
+file:////D:/portal/gcp/framework/entity/build/lib/ofbiz-entity.jar,\
+file:////D:/portal/gcp/framework/catalina/lib/tomcat-6.0.16-catalina-ha.jar,\
+file:////D:/portal/gcp/framework/catalina/lib/tomcat-6.0.16-catalina-tribes.jar,\
+file:////D:/portal/gcp/framework/catalina/lib/tomcat-6.0.16-catalina.jar,\
+file:////D:/portal/gcp/framework/catalina/lib/tomcat-6.0.16-jasper-el.jar,\
+file:////D:/portal/gcp/framework/catalina/lib/tomcat-6.0.16-jasper-jdt.jar,\
+file:////D:/portal/gcp/framework/catalina/lib/tomcat-6.0.16-jasper.jar,\
+file:////D:/portal/gcp/framework/catalina/lib/tomcat-6.0.16-tomcat-coyote.jar,\
+file:////D:/portal/gcp/framework/catalina/lib/tomcat-6.0.16-tomcat-dbcp.jar,\
+file:////D:/portal/gcp/framework/catalina/lib/tomcat-6.0.16-tomcat-juli-adapters.jar,\
+file:////D:/portal/gcp/framework/catalina/lib/tomcat-6.0.16-tomcat-juli.jar,\
+file:////D:/portal/gcp/framework/catalina/build/lib/ofbiz-catalina.jar,\
+file:////D:/portal/gcp/framework/security/build/lib/ofbiz-security.jar,\
+file:////D:/portal/gcp/framework/datafile/build/lib/ofbiz-datafile.jar,\
+file:////D:/portal/gcp/framework/minilang/build/lib/ofbiz-minilang.jar,\
+file:////D:/portal/gcp/framework/common/build/lib/ofbiz-common.jar,\
+file:////D:/portal/gcp/framework/service/lib/axis-ant.jar,\
+file:////D:/portal/gcp/framework/service/lib/axis.jar,\
+file:////D:/portal/gcp/framework/service/lib/wsdl4j.jar,\
+file:////D:/portal/gcp/framework/service/build/lib/ofbiz-service.jar,\
+file:////D:/portal/gcp/framework/entityext/build/lib/ofbiz-entityext.jar,\
+file:////D:/portal/gcp/framework/bi/build/lib/ofbiz-bi.jar,\
+file:////D:/portal/gcp/framework/webapp/lib/DataVision-1.0.0.jar,\
+file:////D:/portal/gcp/framework/webapp/lib/ezmorph-0.9.1.jar,\
+file:////D:/portal/gcp/framework/webapp/lib/itext-2.0.1.jar,\
+file:////D:/portal/gcp/framework/webapp/lib/json-lib-2.2.3-jdk15.jar,\
+file:////D:/portal/gcp/framework/webapp/lib/rome-0.9.jar,\
+file:////D:/portal/gcp/framework/webapp/lib/serializer-2.7.0.jar,\
+file:////D:/portal/gcp/framework/webapp/lib/velocity-1.6.1.jar,\
+file:////D:/portal/gcp/framework/webapp/lib/ws-commons-java5-1.0.1.jar,\
+file:////D:/portal/gcp/framework/webapp/lib/ws-commons-util-1.0.1.jar,\
+file:////D:/portal/gcp/framework/webapp/lib/xalan-2.7.0.jar,\
+file:////D:/portal/gcp/framework/webapp/lib/xmlrpc-client-3.0.jar,\
+file:////D:/portal/gcp/framework/webapp/lib/xmlrpc-common-3.0.jar,\
+file:////D:/portal/gcp/framework/webapp/lib/xmlrpc-server-3.0.jar,\
+file:////D:/portal/gcp/framework/webapp/build/lib/ofbiz-webapp.jar,\
+file:////D:/portal/gcp/framework/guiapp/lib/XuiCoreSwing-v3.2rc2b.jar,\
+file:////D:/portal/gcp/framework/guiapp/lib/XuiOptional-v3.2rc2b.jar,\
+file:////D:/portal/gcp/framework/guiapp/build/lib/ofbiz-guiapp.jar,\
+file:////D:/portal/gcp/framework/widget/build/lib/ofbiz-widget.jar,\
+file:////D:/portal/gcp/framework/appserver/build/lib/ofbiz-appsvrs.jar,\
+file:////D:/portal/gcp/framework/testtools/build/lib/ofbiz-testtools.jar,\
+file:////D:/portal/gcp/framework/webtools/build/lib/ofbiz-webtools.jar,\
+file:////D:/portal/gcp/framework/webslinger/lib/webslinger-20090320-c73d2e782311.jar,\
+file:////D:/portal/gcp/framework/webslinger/lib/webslinger-catalina-20090320-c73d2e782311.jar,\
+file:////D:/portal/gcp/framework/webslinger/lib/webslinger-extension-bsf-20090320-c73d2e782311.jar,\
+file:////D:/portal/gcp/framework/webslinger/lib/webslinger-extension-code-20090320-c73d2e782311.jar,\
+file:////D:/portal/gcp/framework/webslinger/lib/webslinger-extension-groovy-20090320-c73d2e782311.jar,\
+file:////D:/portal/gcp/framework/webslinger/lib/webslinger-extension-image-20090320-c73d2e782311.jar,\
+file:////D:/portal/gcp/framework/webslinger/lib/webslinger-extension-janino-20090320-c73d2e782311.jar,\
+file:////D:/portal/gcp/framework/webslinger/lib/webslinger-extension-servlet-20090320-c73d2e782311.jar,\
+file:////D:/portal/gcp/framework/webslinger/lib/webslinger-extension-template-20090320-c73d2e782311.jar,\
+file:////D:/portal/gcp/framework/webslinger/lib/webslinger-extension-velocity-20090320-c73d2e782311.jar,\
+file:////D:/portal/gcp/framework/webslinger/lib/webslinger-extension-wiki-20090320-c73d2e782311.jar,\
+file:////D:/portal/gcp/framework/webslinger/lib/webslinger-launcher-20090320-c73d2e782311.jar,\
+file:////D:/portal/gcp/framework/webslinger/build/lib/ofbiz-webslinger.jar,\
+file:////D:/portal/gcp/applications/party/build/lib/ofbiz-party.jar,\
+file:////D:/portal/gcp/applications/securityext/build/lib/ofbiz-securityext.jar,\
+file:////D:/portal/gcp/applications/content/lib/jdom.jar,\
+file:////D:/portal/gcp/applications/content/lib/lucene-2.2.0.jar,\
+file:////D:/portal/gcp/applications/content/lib/poi-3.2-FINAL-20081019.jar,\
+file:////D:/portal/gcp/applications/content/lib/rome-0.8.jar,\
+file:////D:/portal/gcp/applications/content/build/lib/ofbiz-content.jar,\
+file:////D:/portal/gcp/applications/workeffort/build/lib/ofbiz-workeffort.jar,\
+file:////D:/portal/gcp/applications/product/build/lib/ofbiz-product.jar,\
+file:////D:/portal/gcp/applications/manufacturing/build/lib/ofbiz-manufacturing.jar,\
+file:////D:/portal/gcp/applications/accounting/build/lib/ofbiz-accounting.jar,\
+file:////D:/portal/gcp/applications/humanres/build/lib/ofbiz-humanres.jar,\
+file:////D:/portal/gcp/applications/order/build/lib/ofbiz-order.jar,\
+file:////D:/portal/gcp/applications/marketing/build/lib/ofbiz-marketing.jar,\
+file:////D:/portal/gcp/specialpurpose/ecommerce/build/lib/ofbiz-ecommerce.jar,\
+file:////D:/portal/gcp/specialpurpose/hhfacility/build/lib/ofbiz-hhfacility.jar,\
+file:////D:/portal/gcp/hot-deploy/admin/build/lib/ofbiz-maintaintools.jar,\
+file:////D:/portal/gcp/hot-deploy/Affiliation/build/lib/ofbiz-Affiliation.jar,\
+file:////D:/portal/gcp/hot-deploy/answers/build/lib/ofbiz-answers.jar,\
+file:////D:/portal/gcp/hot-deploy/blogs/build/lib/ofbiz-order.jar
+
+# List of JAR files that should not be scanned using the JarScanner
+# functionality. This is typically used to scan JARs for configuration
+# information. JARs that do not contain such information may be excluded from
+# the scan to speed up the scanning process. This is the default list. JARs on
+# this list are excluded from all scans. Scan specific lists (to exclude JARs
+# from individual scans) follow this. The list must be a comma separated list of
+# JAR file names.
+# The JARs listed below include:
+# - Tomcat Bootstrap JARs
+# - Tomcat API JARs
+# - Catalina JARs
+# - Jasper JARs
+# - Tomcat JARs
+# - Common non-Tomcat JARs
+# - Sun JDK JARs
+# - OpenJDK JARs
+# - Apple JDK JARs
+
+# Additional JARs (over and above the default JARs listed above) to skip when
+# scanning for Servlet 3.0 pluggability features. These features include web
+# fragments, annotations, SCIs and classes that match @HandlesTypes. The list
+# must be a comma separated list of JAR file names.
+org.apache.catalina.startup.ContextConfig.jarsToSkip=
+
+# Additional JARs (over and above the default JARs listed above) to skip when
+# scanning for TLDs. The list must be a comma separated list of JAR file names.
+org.apache.catalina.startup.TldConfig.jarsToSkip=
+
+#
+# String cache configuration.
+tomcat.util.buf.StringCache.byte.enabled=true
+#tomcat.util.buf.StringCache.char.enabled=true
+#tomcat.util.buf.StringCache.trainThreshold=500000
+#tomcat.util.buf.StringCache.cacheSize=5000
